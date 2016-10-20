@@ -30,7 +30,7 @@ let administrators = ['ezenith'];
 let moderators = [];
 let guestIn = 0;
 
-app.get('/chatapp/:uid', function(req, res) {
+app.get('/', function(req, res) {
 	res.header('Access-Control-Allow-Origin', 'https://g223.sandboxd.com/');
 	res.header('Access-Control-Allow-Credentials', 'true');
     res.end('hello');
@@ -49,12 +49,6 @@ io.on('connection', function(socket) {
 
 	//AUTH BULLSHIT
 	sandboxd.verifyUser(user_uid, user_sid, function (err, data) {
-
-		// For account ezenith for TESTING ONLY.
-		if (user_uid === '317' && user_sid === '1337') {
-			err = null;
-		}
-
 		if (err == null) {
 			//Authentication successful
 			sandboxd.getUser(user_uid, function (err, data) { // One day I'll handle this error. One day.
@@ -184,7 +178,7 @@ io.on('connection', function(socket) {
     						    	socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: 'The user you are trying to kick is not currently online.' }));
     						    }
 						    } else {
-						        socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `Access level 4 or great is required for this command. Your access level is ${users[username].accessLevel}.` }));
+						        socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `Access level 4 or greater is required for this command. Your access level is ${users[username].accessLevel}.` }));
 						    }
 						    break;
 						case '/ban':
@@ -197,7 +191,7 @@ io.on('connection', function(socket) {
 									socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `User "${targetUser}" has been banned successfully.` }));
 								}
 							} else {
-						        socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `Access level 4 or great is required for this command. Your access level is ${users[username].accessLevel}.` }));
+						        socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `Access level 4 or greater is required for this command. Your access level is ${users[username].accessLevel}.` }));
 							}
 							break;
 						case '/users':
@@ -209,7 +203,7 @@ io.on('connection', function(socket) {
 								tempList = tempList.join(' -- ');
 								socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: tempList }));
 							} else {
-								socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `Access level 4 or great is required for this command. Your access level is ${users[username].accessLevel}.` }));
+								socket.emit('messageHandler', messageHandler({ type: 'server', messageContent: `Access level 4 or greater is required for this command. Your access level is ${users[username].accessLevel}.` }));
 							}
 							break;
 						case '/announce':
