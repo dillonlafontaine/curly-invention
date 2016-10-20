@@ -1,6 +1,7 @@
 "use strict"
 
 let sandboxd = require('sandboxd');
+let config_sandboxd = require('./config_sandboxd');
 let path = require('path');
 let url = require('url');
 let sani = require('sanitize-html');
@@ -15,8 +16,8 @@ let io = require('socket.io')(http);
 let query = '';
 
 // Sandboxd game variables
-let GAME_ID = 223;
-let GAME_KEY = 'j2umfxbmzflbcb7qvhtgsx4sffdt1euq';
+let GAME_ID = config_sandboxd.game_id;
+let GAME_KEY = config_sandboxd.game_key;
 
 sandboxd.init(GAME_ID, GAME_KEY);
 
@@ -30,7 +31,6 @@ let moderators = [];
 let guestIn = 0;
 
 app.get('/chatapp/:uid', function(req, res) {
-	res.header('Access-Control-Allow-Origin', 'http://localhost/');
 	res.header('Access-Control-Allow-Origin', 'https://g223.sandboxd.com/');
 	res.header('Access-Control-Allow-Credentials', 'true');
     res.end('hello');

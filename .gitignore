@@ -22,3 +22,6 @@ $RECYCLE.BIN/
 
 # Photoshop PSD file
 *.psd
+
+# Ignore Configuration Files
+config_sandboxd.js
