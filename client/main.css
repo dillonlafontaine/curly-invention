@@ -141,13 +141,13 @@ Chat Styles
 
 .mod,
 .admin {
-  background-image: url(images/staff-mod-hammer.png);
+  background-image: url(images/staff-mod-hammer.png?v=2);
   background-repeat: no-repeat;
   background-position: left, center;
 }
 
 .admin {
-  background-image: url(images/staff-admin-cog.png);
+  background-image: url(images/staff-admin-cog.png?v=2);
 }
 
 .staff-message {
