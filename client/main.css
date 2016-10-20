@@ -132,21 +132,22 @@ Chat Styles
 
 .chat-list-item > span {
   display: inline-block;
-  padding-left: 26px;
+  padding-left: 21px;
 }
 
 .chat-message {
   color: #fff;
 }
 
-.mod {
+.mod,
+.admin {
   background-image: url(images/staff-mod-hammer.png);
   background-repeat: no-repeat;
+  background-position: left, center;
 }
 
 .admin {
   background-image: url(images/staff-admin-cog.png);
-  background-repeat: no-repeat;
 }
 
 .staff-message {
