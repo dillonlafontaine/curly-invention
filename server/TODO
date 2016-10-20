@@ -1,0 +1,28 @@
+
+
+///// More Functions
+
+Level 2 access: /createroom /whois
+Level 3 access: /boot
+Level 4 access: /ip (/forcejoin /fj) /mute /closeroom /staffchat? /ninja
+Level 5 access: /permit
+
+ perhaps a ban function. a server restart would purge a ban list though.
+
+
+
+
+ // User status work.
+    1 - 5?
+
+    1: Guest            > Has limited access. Perhaps no access to any commands? Maybe not.
+    2: User             > Has access to specific commands for quality of life stuff (/msg /reply etc)
+    3: Room Host?       > Perhaps the adition of /createroom will require this status.
+                            Would have the ability to moderate that channel via /boot command perhaps.
+                            Maybe a way to modify the rooms info or something. Not sure yet.
+    4: Moderator        > Would have access to abilities suitable for dealing with the userbase.
+                            IE: /kick /ban /users /ip?
+    5: Administrator    > Highest level of access. Access to all available features plus some.
+                            and perhaps the ability to temporarily revoke access of a moderator
+                            if need be. Since moderators are hard-coded, being able to temp remove
+                            access may be required.
