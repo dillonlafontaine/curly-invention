@@ -25,3 +25,6 @@ $RECYCLE.BIN/
 
 # Ignore Configuration Files
 config_sandboxd.js
+
+# Node Modules
+node_modules/
