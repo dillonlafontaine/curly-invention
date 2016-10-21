@@ -7,5 +7,5 @@ app.on('ready', () => {
       nodeIntegration: false
     }
   });
-  win.loadURL(`http://localhost/curly-invention/client/index.html?uid=317&sid=1337`);
+  win.loadURL(`http://localhost/curly-invention/desktop-client/index.html?uid=317&sid=1337`); // testing URL
 });
