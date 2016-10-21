@@ -1,0 +1,234 @@
+/* Importing both 'Open Sans' and 'Quicksand' fonts. */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Quicksand);
+
+:root {
+  --color-1: #114B5F; /* Midnight Green */
+  --color-2: #1f2326;
+  /*--color-2: #456990; /* Queen Blue */
+  --color-3: #E4FDE1; /* Nyanza */
+  --color-4: #150811;
+  --scrollbar-color: #004590;
+  /* Chat Message Color Vars */
+  --server-message: #FF5964; /* Fiery Rose Red */
+  --staff-message: #00b4ff;
+  --private-message: #00ff00;
+  --kick-message: #ffcc00;
+
+  --user-list-width: 250px;
+}
+
+html,
+body {
+    margin: 0; padding: 0;
+    color: #fff;
+    background-color: var(--color-2);
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*
+  User list styles
+*/
+
+.user-aside {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: var(--user-list-width);
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.user-list {
+  color: var(--color-2);
+  list-style: none;
+  margin: 0; padding: 0;
+}
+
+.user-list-item {
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.user-list-item:hover {
+  color: #fff;
+  background-color: var(--color-2);
+}
+
+/*
+Chat Styles
+*/
+
+.chat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: calc(100vw - var(--user-list-width));
+}
+
+.chat-window {
+  height: calc(100% - 40px);
+}
+
+.chat-list {
+  list-style: none;
+  height: 100%;
+  margin: 0; padding: 0 0 10px 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.chat-list-item {
+  padding: 5px;
+  word-wrap: break-word;
+}
+
+.chat-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.chat-form > input {
+  color: var(--color-2);
+  height: 40px;
+  font-size: 1em;
+  padding: 10px 20px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.chat-form > input::-moz-focus-inner { border:0; padding:0 }
+.chat-form > input:focus { outline: none; }
+
+.chat-form > input[type=text] {
+  width: 80%;
+}
+
+.chat-form > input[type=submit] {
+  width: 20%;
+  background-color: #fff;
+  margin-bottom: -1px;
+  transition: color 150ms ease-in-out,
+              background-color 150ms ease-in-out;
+}
+
+.chat-form > input[type=submit]:hover {
+  color: #fff;
+  background-color: var(--color-2);
+}
+
+/* Chat Message Colors */
+
+.chat-list-item > span {
+  display: inline-block;
+  padding-left: 21px;
+}
+
+.chat-message {
+  color: #fff;
+}
+
+.mod,
+.admin {
+  background-image: url(images/staff-mod-hammer.png?v=2);
+  background-repeat: no-repeat;
+  background-position: left, center;
+}
+
+.admin {
+  background-image: url(images/staff-admin-cog.png?v=2);
+}
+
+.staff-message {
+  color: var(--staff-message);
+}
+
+.server-message {
+  color: var(--server-message);
+}
+
+.private-message {
+  color: var(--private-message);
+}
+
+.kick-message {
+  color: var(--kick-message);
+}
+
+.announce-message {
+  color: var(--kick-message);
+}
+
+.system-announce-message {
+  color: var(--kick-message);
+}
+
+/*
+  Model Styles
+*/
+
+.modal {
+  z-index: 99;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: var(--color-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-message {
+  max-width: 66%;
+  word-wrap: break-word;
+}
+
+.modal-message-header {
+  color: var(--kick-message);
+}
+
+.modal-message-body {}
+
+/*
+Scrollbar Styles
+*/
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+}
+
+@media(max-width: 600px) {
+  .user-aside {
+    width: 0;
+  }
+  .chat {
+    width: 100vw;
+  }
+}
+
+@media(max-width: 400px) {
+  .chat-form > input[type=text] {
+    width: 100%;
+  }
+
+  .chat-form > input[type=submit] {
+    width: 100%;
+    border-top: 1px solid var(--color-2);
+    border-left: none;
+  }
+}
