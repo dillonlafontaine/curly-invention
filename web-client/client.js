@@ -4,7 +4,7 @@ $(document).ready(function() {
   let socket = io('https://socket-io-testing-ezenith.c9users.io/', {
     reconnectionAttempts: 3
   });
-  let $form = $('.chat-form');
+  let $form = $('.chat-form > input[type=submit]');
   let $chatList = $('.chat-list');
   let $userlist = $('.user-list');
   let $messageEl = $('.chat-form > input[type=text]');
@@ -43,7 +43,7 @@ $(document).ready(function() {
     $('.loadModal').remove();
   });
 
-  $form.submit(function(e) {
+  $form.on('click', function(e) {
     socket.emit('chatMessage', $messageEl.val());
     $messageEl.val('');
     return false;
