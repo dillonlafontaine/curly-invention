@@ -26,9 +26,9 @@
           <!-- <li class="chat-list-item">Chat Template</li> -->
         </ul>
       </section>
-      <div class="chat-form" action="" method="">
+      <form class="chat-form" action="" method="" onsubmit="function () { return false; }">
         <input type="text" placeholder="message" autocomplete="off" maxlength="200"><input type="submit" value="send">
-      </div>
+      </form>
     </section>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
